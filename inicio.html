@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinFat Studio | Estudio de Tatuajes y Piercings en Madrid</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para maquetar los bloques tipo la referencia */
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+            text-align: left;
+        }
+        .meta-box {
+            background-color: rgba(26, 26, 26, 0.6);
+            border: 1px solid #262626;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .meta-box h4 {
+            color: var(--accent-neon);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .meta-box p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+        .badge-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .badge {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid #444;
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.05);
+            box-shadow: none;
+        }
+        .number-badge {
+            color: var(--accent-neon);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header>
+        <div class="container">
+            <a href="inicio.html" class="logo">THINFAT<span>STUDIO</span></a>
+            <nav class="nav-links">
+                <a href="inicio.html" class="active">Inicio</a>
+                <a href="equipo.html">El Equipo</a>
+                <a href="estilos.html">Estilos</a>
+                <a href="piercings.html">Piercings</a>
+                <a href="colaboraciones.html">Colaboraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DE PORTADA -->
+    <main>
+        <!-- SECCIÓN HERO (ESTILO RETIRO TATTOO) -->
+        <section class="hero">
+            <div class="container">
+                <div class="badge-container">
+                    <span class="badge">📍 Centro - Madrid</span>
+                    <span class="badge">✒️ Línea fina y autor</span>
+                    <span class="badge">✨ Piercing profesional</span>
+                </div>
+                
+                <h1>Estudio de tatuajes en <span>Madrid</span></h1>
+                <p>En ThinFat Studio convertimos tu idea en una pieza única. Un espacio seguro y premium en el corazón de la capital con asesoramiento personalizado y máxima higiene.</p>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/34653641276" target="_blank" class="btn">Reservar por WhatsApp</a>
+                    <a href="contacto.html" class="btn btn-secondary">Ubicación y Contacto</a>
+                </div>
+
+                <!-- BLOQUE DE DATOS DIRECTOS -->
+                <div class="hero-meta">
+                    <div class="meta-box">
+                        <h4>Dirección</h4>
+                        <p>C. de las Hileras, 10, bajo<br>Centro, 28013 Madrid</p>
+                    </div>
+                    <div class="meta-box">
+                        <h4>Teléfono</h4>
+                        <p>653 64 12 76</p>
+                    </div>
+                    <div class="meta-box">
+                        <h4>Horario</h4>
+                        <p>Lunes a Sábado<br>Con cita previa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN COMPROMISO SANITARIO -->
+        <section style="background-color: #080808; border-top: 1px solid #141414;">
+            <div class="container">
+                <h2 class="section-title">Arte y salud: nuestro compromiso con tu <span>seguridad</span></h2>
+                <div class="grid">
+                    <div class="card">
+                        <span class="number-badge">01</span>
+                        <h3>Tintas Homologadas</h3>
+                        <p>Trabajamos exclusivamente con pigmentos de primera calidad que cumplen estrictamente con la normativa europea REACH. Totalmente seguros.</p>
+                    </div>
+                    <div class="card">
+                        <span class="number-badge">02</span>
+                        <h3>Material 100% Desechable</h3>
+                        <p>Agujas, cartuchos y fundas protectoras son de un solo uso. Abrimos todo el material esterilizado delante de ti justo antes de empezar la sesión.</p>
+                    </div>
+                    <div class="card">
+                        <span class="number-badge">03</span>
+                        <h3>Joyería de Grado Implante</h3>
+                        <p>Para nuestras puestas de piercing utilizamos exclusivamente Titanio Grado Implante, hipoalergénico y libre de níquel para una curación óptima.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ThinFat Studio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
