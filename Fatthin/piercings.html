@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinFat Studio | Perforación Profesional y Piercing en Madrid</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .piercing-intro {
+            text-align: center;
+            color: #a6a6a6;
+            max-width: 700px;
+            margin: -20px auto 50px auto;
+            font-size: 1.1rem;
+        }
+
+        /* CONTENEDORES INTERACTIVOS (EFECTO HOVER) */
+        .piercing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .interactive-card {
+            position: relative;
+            height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #222;
+            cursor: pointer;
+            /* Marcadores de posición para las imágenes de fondo futuras */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Simuladores de fondo provisionales (aquí irán tus fotos de oreja, nariz, etc.) */
+        .card-ear { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('placeholder-oreja.jpg'); background-color: #111; }
+        .card-face { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('placeholder-nariz.jpg'); background-color: #161616; }
+        .card-body { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)), url('placeholder-cuerpo.jpg'); background-color: #1c1c1c; }
+
+        .card-content {
+            position: absolute;
+            inset: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centrado vertical inicial */
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .interactive-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-main);
+            margin: 0;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .interactive-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 2;
+        }
+
+        /* ACCIÓN AL PASAR EL RATÓN (HOVER) */
+        @media (hover: hover) {
+            .interactive-card:hover .card-content {
+                justify-content: flex-start; /* Mueve el bloque hacia arriba */
+                background-color: rgba(0, 0, 0, 0.9); /* Oscurece el fondo para leer mejor */
+            }
+
+            .interactive-card:hover h3 {
+                transform: translateY(0);
+                color: var(--accent-neon); /* Cambia al verde neón corporativo */
+                font-size: 1.4rem; /* Se ajusta un pelo para dejar espacio */
+            }
+
+            .interactive-card:hover p {
+                opacity: 1;
+                transform: translateY(0); /* Sube flotando suavemente */
+            }
+            
+            /* Ajuste inicial para que el h3 parezca perfectamente centrado */
+            .card-content {
+                justify-content: center;
+            }
+            .interactive-card h3 {
+                transform: translateY(15px); /* Compensación del texto oculto */
+            }
+            .interactive-card:hover h3 {
+                transform: translateY(10px);
+            }
+        }
+
+        /* SECCIÓN DE ESTÁNDAREES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .feature-box {
+            background-color: #0c0c0c;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .feature-box h3 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .accent-bar {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 40px;
+            height: 30px;
+            background-color: var(--accent-neon);
+            opacity: 0.1;
+            border-radius: 0 0 4px 4px;
+        }
+        .care-step {
+            background-color: var(--card-bg);
+            border-left: 3px solid var(--accent-neon);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 15px;
+        }
+        .care-step strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 5px;
+        }
+        .care-step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA GENERAL -->
+    <header>
+        <div class="container">
+            <a href="inicio.html" class="logo">THINFAT<span>STUDIO</span></a>
+            <nav class="nav-links">
+                <a href="inicio.html">Inicio</a>
+                <a href="equipo.html">El Equipo</a>
+                <a href="estilos.html">Estilos</a>
+                <a href="piercings.html" class="active">Piercings</a>
+                <a href="colaboraciones.html">Colaboraciones</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: CATÁLOGO INTERACTIVO -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Anatomía del <span>Piercing</span></h2>
+                <p class="piercing-intro">Realizamos todo tipo de perforaciones corporales con aguja americana (nunca con pistola), garantizando un proceso fluido, preciso y con la mínima molestia.</p>
+                
+                <div class="piercing-grid">
+                    <!-- Tarjeta 1: Oreja -->
+                    <div class="interactive-card card-ear">
+                        <div class="card-content">
+                            <h3>👂 Oreja & Cartílago</h3>
+                            <p>Desde el clásico lóbulo hasta las perforaciones más avanzadas de cartílago: Helix, Anti-Helix, Tragus, Industrial, Daith (ideal para migrañas) y Rook. Diseñamos tu proyecto de oreja a medida.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2: Faciales -->
+                    <div class="interactive-card card-face">
+                        <div class="card-content">
+                            <h3>👃 Faciales & Orales</h3>
+                            <p>Máxima simetría en el rostro. Especialistas en Nostril (aleta de la nariz), Septum, Labret, Medusa, ceja y perforaciones de lengua. Estudiamos tus facciones antes de marcar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Corporales -->
+                    <div class="interactive-card card-body">
+                        <div class="card-content">
+                            <h3>✨ Corporales & Avanzados</h3>
+                            <p>Perforaciones limpias y estables. Ombligo, pezón, microdermales y proyectos corporales personalizados. Control absoluto de los ángulos para evitar rechazos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ESTÁNDAREES DE CALIDAD -->
+        <section style="background-color: #080808; border-top: 1px solid #141414; border-bottom: 1px solid #141414;">
+            <div class="container">
+                <h2 class="section-title">Nuestros estándares de <span>calidad</span></h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="accent-bar"></div>
+                        <h3>Titanio Grado Implante</h3>
+                        <p>Para la primera puesta utilizamos exclusivamente Titanio ASTM F-136 pulido a espejo. Es el mismo material usado en prótesis médicas: 100% biocompatible, hipoalergénico y totalmente libre de níquel.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="accent-bar"></div>
+                        <h3>Técnica Free-Hand (Aguja)</h3>
+                        <p>Olvídate de las pistolas que rompen el tejido. Perforamos exclusivamente con catéteres y agujas americanas estériles de un solo uso. El corte es limpio, preciso y favorece una curación el doble de rápida.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="accent-bar"></div>
+                        <h3>Anestesia y Confort</h3>
+                        <p>Nuestro equipo está formado para que la experiencia sea prácticamente indolora. Controlamos la respiración contigo y realizamos la perforación en un abrir y cerrar de ojos de forma totalmente segura.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: GUÍA DE CUIDADOS -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">Guía básica de <span>curación</span></h2>
+                <p class="piercing-intro" style="margin-bottom: 35px;">El 50% del éxito de un piercing depende de cómo lo cuides los primeros meses. Sigue estas tres reglas de oro:</p>
+                
+                <div style="max-width: 750px; margin: 0 auto;">
+                    <div class="care-step">
+                        <strong>🧼 1. Limpieza Diaria (2 o 3 veces al día)</strong>
+                        <p>Lava la zona con suero fisiológico ayudándote de un bastoncillo de algodón limpio. Retira con suavidad cualquier resto que se haya quedado alrededor de la joya sin arrancarlo bruscamente.</p>
+                    </div>
+                    <div class="care-step">
+                        <strong>🚫 2. No tocar ni girar la joya</strong>
+                        <p>La vieja creencia de "girar el pendiente para que no se pegue" es falsa y rompe el tejido nuevo que se está creando por dentro. No lo toques nunca con las manos sucias.</p>
+                    </div>
+                    <div class="care-step">
+                        <strong>🛌 3. Evita la presión al dormir</strong>
+                        <p>Intenta no dormir del lado del piercing recién hecho durante las primeras semanas. La presión prolongada desvía el ángulo de la perforación y provoca inflamación o bultos de curación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ThinFat Studio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
